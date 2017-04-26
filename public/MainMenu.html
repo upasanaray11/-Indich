@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="javascripts/angular.js"></script>
+    <!--<script src="javascripts/angular.min.js"></script>-->
+    <script src="javascripts/angular-resource.min.js"></script>
+    <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/Menu_angular.js"></script>
+    <title>MAIN MENU</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/mainmenu.css">
+</head>
+
+<body>
+     <div id="logo">
+            <div class="homepage_menu"><a href="index.html">HOME</a></div>
+            <div class="homepage_menu"><a href="javascript:void(0)">MENU</a></div>
+            <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</div>
+            <div class="homepage_menu">
+                <a href="login.html"><input class="button" type="button" value="ORDER ONLINE"></a>
+            </div>
+        </div>
+
+    <div class="box" ng-app="Menu" ng-controller="menuController">
+            <div class="item" ng-repeat="items in FoodTypes">
+                <p class="category">{{items.category}}</p>
+                <a href="Menu_{{items.category}}.html"><img ng-src="{{items.imagepath}}" height="200" width="300" /></a>
+</div>
+        </div>
+
+    <div id="footer">
+        <div style="width:100%;height:250px">
+            <div id="footer_logo">Indichi</div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">CONTACT US</div>
+                <div class="footer_menu">Features</div>
+                <div class="footer_menu">Pricing</div>
+                <div class="footer_menu">Customers</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">ABOUT US</div>
+                <div class="footer_menu">Our Story</div>
+                <div class="footer_menu">Offices</div>
+                <div class="footer_menu">Press</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">FOLLOW US</div>
+                <div class="footer_menu">Facebook</div>
+                <div class="footer_menu">Twitter</div>
+                <div class="footer_menu">Instagram</div>
+            </div>
+        </div>
+        <div id="footer_copyright">Privacy   •    © 2017 Indichi Inc.</div>
+    </div>
+</body>
+</html>

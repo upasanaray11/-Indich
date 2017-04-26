@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="javascripts/angular.js"></script>
+    <!--<script src="javascripts/angular.min.js"></script>-->
+    <script src="javascripts/angular-resource.min.js"></script>
+    <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/Menu_angular.js"></script>
+    <title>APPETIZER</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/submenu.css">
+</head>
+
+<body>
+     <div id="logo">
+            <div class="homepage_menu"><a href="index.html">HOME</a></div>
+            <div class="homepage_menu"><a href="MainMenu.html">MENU</a></div>
+            <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</div>
+            <div class="homepage_menu">
+                <a href="login.html"><input class="button" type="button" value="ORDER ONLINE"></a></div>
+    </div>
+
+    <div id="menu">
+        <div class="category">APPETIZER</div>
+        <div class="line"></div>
+        <div class="box" ng-app="Menu" ng-controller="appetizerController">
+            <div class="item" ng-repeat="items in FoodTypes">
+                <div class="image" style="background-image:url('{{items.imagepath}}');"></div>
+                <div class="title">{{items.name}}</div>
+                <div class="discription">{{items.description}}</div>
+                <div class="price">{{items.price}}</div>
+                <div class="dotted_line">........................................................</div>
+                <table>
+                    <tr class="count">
+                        <td><input class="textBox" value="{{items.quantity}}" /></td>
+                        <td><input class="select" type="button" value="ADD INTO CART" onclick="addToCart()" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div style="width:100%;height:250px">
+            <div id="footer_logo">Indichi</div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">CONTACT US</div>
+                <div class="footer_menu">Features</div>
+                <div class="footer_menu">Pricing</div>
+                <div class="footer_menu">Customers</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">ABOUT US</div>
+                <div class="footer_menu">Our Story</div>
+                <div class="footer_menu">Offices</div>
+                <div class="footer_menu">Press</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">FOLLOW US</div>
+                <div class="footer_menu">Facebook</div>
+                <div class="footer_menu">Twitter</div>
+                <div class="footer_menu">Instagram</div>
+            </div>
+        </div>
+        <div id="footer_copyright">Privacy   •    © 2017 Indichi Inc.</div>
+    </div>
+</body>
+</html>

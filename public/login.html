@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="javascripts/angular.js"></script>
+    <!--<script src="javascripts/angular.min.js"></script>-->
+    <script src="javascripts/angular-resource.min.js"></script>
+    <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/Users_Angular.js"></script>
+    <title>SIGN IN</title>
+</head>
+<link rel="stylesheet" type="text/css" href="stylesheets/login.css">
+
+<body ng-app="Users">
+     <div id="logo">
+            <div class="homepage_menu"><a href="index.html">HOME</a></div>
+            <div class="homepage_menu"><a href="MainMenu.html">MENU</a></div>
+            <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</div>
+            <div class="homepage_menu">
+                <a href="javascript:void(0)"><input class="button" type="button" value="ORDER ONLINE"></a></div>
+    </div>
+
+<div id="middle">
+    <div class="box">
+    <form id="registrationfrm" ng-controller="registeringUser" ng-submit="register()">
+        <div class="title">New Customer?</div>
+        <p class="info"><em>Create an account</em> to take advantage of the features <br/>
+        and benefits that make shopping faster and easier. <br></p>
+        <div id="signinbox">
+        <table>
+        <tr><td class="label">Name</td><td> <input class="inputbox" type="text" ng-model="name"></td></tr>
+       <tr><td class="label">Email</td><td><input class="inputbox" type="text" ng-model="email"></td></tr>
+       <tr><td class="label">User Name</td><td><input class="inputbox" type="text" ng-model="uname"></td></tr>
+        <tr><td class="label">Password</td><td><input class="inputbox" type="password" ng-model="password"></td></tr>
+       
+        <!--<tr><td class="label">Confirm Password</td><td><input class="inputbox" type="text"></td></tr>-->
+        </table>
+        </div>
+        <br/>
+         <div><input class="btnSubmit"type="submit" value="Create an Account"></div>
+        {{message}}
+    </form>
+    </div>
+
+    <div class="box">
+    <form id="signinfrm" ng-controller="signinUser" ng-submit="signin()">
+        <div class="title">Returning Customer?</div>
+        <p class="info"><strong>Sign in</strong> to your Indichi.com account.<br/></p>
+        <div id="registerbox">
+        <table>
+        <tr><td class="label">User Name</td><td><input class="inputbox" type="text" ng-model="uname"></td></tr>
+        <tr><td class="label">Password</td><td><input class="inputbox" type="password" ng-model="password"></td></tr>
+        <tr><td> </td><td>Password is case sensitive.</tr>
+        </table>
+        </div>
+        <br/>
+        <div><input class="btnSubmit" type="submit" value="Sign In"></div>
+        {{message}}
+    </form>
+    </div>
+</div>
+
+      <div id="footer">
+            <div style="width:100%;height:250px">
+                <div id="footer_logo">Indichi</div>
+                <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                    <div class="footer_contact">CONTACT US</div>
+                    <div class="footer_menu">Features</div>
+                    <div class="footer_menu">Pricing</div>
+                    <div class="footer_menu">Customers</div>
+                </div>
+                <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                    <div class="footer_contact">ABOUT US</div>
+                    <div class="footer_menu">Our Story</div>
+                    <div class="footer_menu">Offices</div>
+                    <div class="footer_menu">Press</div>
+                </div>
+                <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                    <div class="footer_contact">FOLLOW US</div>
+                    <div class="footer_menu">Facebook</div>
+                    <div class="footer_menu">Twitter</div>
+                    <div class="footer_menu">Instagram</div>
+                </div>
+            </div>
+            <div id="footer_copyright">Privacy   •    © 2017 Indichi Inc.</div>
+        </div>
+</div>
+</body>
+</html>

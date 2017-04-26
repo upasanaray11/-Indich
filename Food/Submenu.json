@@ -1,0 +1,131 @@
+﻿[
+  {
+      "id": "1",
+      "name": "Pineapple Chile",
+      "imagepath": "pineapple_chile.jpg",
+      "price": "$10.00",
+      "description": "1800 reposado tequila, Ancho Reyes Chile liqueur, pineapple juice, fresh lime"
+    },
+
+    {
+      "id": "1",
+      "name": "Mango Mai Tai",
+      "imagepath": "Mango_mai_tai.jpg",
+      "price": "$10.00",
+      "description": "Sailor Jerry rum, orange liqueur, mango, orgeat, fresh lime, Cruzan dark rum fl oat"
+    },
+    {
+      "id": "1",
+      "name": "Diamond Eyes",
+      "imagepath": "diamond_eyes.jpg",
+      "price": "$11.00",
+      "description": "Beefeater Gin, Clear Creek Pear Brandy, Velvet Falernum, Lime, Tiki Bitters"
+    },
+    {
+      "id": "1",
+      "name": "Coffee",
+      "imagepath": "coffee.jpg",
+      "price": "$4.33",
+      "description": "Aromatic medium,dark drip coffee"
+    },
+  {
+    "id": "1",
+    "name": "Tea",
+    "imagepath": "tea.jpg",
+    "price": "$2.33",
+    "description": "Aromatic tea"
+  },
+  {
+    "id": "2",
+    "name": "Vegetable tulips",
+    "imagepath": "vegetable_tulips.jpg",
+    "price": "$9",
+    "description": "Crunchy shells mixed vegetables spicy and tangy sauce"
+  },
+  
+  {
+    "id": "2",
+    "name": "Pan fried chili paneer",
+    "imagepath": "chili_paneer.jpg",
+    "price": "$11",
+    "description": "Tossed paneer with green peppers and Onions."
+  },
+  {
+    "id": "2",
+    "name": "Chicken Fried Wontons",
+    "imagepath": "Wontons.jpg",
+    "price": "$12",
+    "description": "Chicken wontons filled with ground chicken, shrimp, and then deep-fried to golden perfection"
+  },
+  {
+    "id": "2",
+    "name": "Drums of heaven",
+    "imagepath": "Drums.jpg",
+    "price": "$11",
+    "description": "Wings fried and tossed in schezwan sauce"
+  },
+  {
+    "id": "2",
+    "name": "Shrimp salt",
+    "imagepath": "Shrimp_salt.jpg",
+    "price": "$11",
+    "description": "Wings fried and tossed in schezwan sauce"
+  },
+  {
+    "id": "3",
+    "name": "Chili bean eggplant",
+    "imagepath": "chili_bean_eggplant.jpg",
+    "price": "$12",
+    "description": "Served with hot bean sauce with eggplant and Onion."
+  },
+  {
+    "id": "3",
+    "name": "Ginger chili tofu ",
+    "imagepath": "Ginger_chili_tofu.jpg",
+    "price": "$12",
+    "description": "Golden tofu cubes with ginger,green chili and scallions."
+  },
+  {
+    "id": "3",
+    "name": "Cashew nut chicken ",
+    "imagepath": "cashew_nut_chicken.jpg",
+    "price": "$13",
+    "description": "Diced vegetables,chicken with soy and garlic sauce. "
+  },
+  {
+    "id": "3",
+    "name": "Kung pao chicken ",
+    "imagepath": "kung_chicken.jpg",
+    "price": "$13",
+    "description": "Spicy stir-fry Chinese dish made with chicken, peanuts, vegetables, and chili peppers."
+  },
+  {
+    "id": "3",
+    "name": "Garlic pepper chicken",
+    "imagepath": "Garlic_pepper_chicken.jpg",
+    "price": "$13",
+    "description": "Crispy wings, garlicky, peppery and oh so addictive. "
+  },
+  {
+    "id": "4",
+    "name": "Oreo cheesecakes cupcakes",
+    "imagepath": "Orea_cup_cheesecake.jpg",
+    "price": "$7",
+    "description": "Adorable cheesecake featuring rich chocolaty crust and traditional cheesecake filling to make you feel heaven "
+  },
+  {
+    "id": "4",
+    "name": "Snicker Cheesecake",
+    "imagepath": "Snickers_cheesecake.jpg",
+    "price": "$8.50",
+    "description": "Snickers Cheesecake with Oreo crust, cheesecake filling loaded with Snickers"
+  },
+  {
+    "id": "4",
+    "name": "Nutella Crown with walnut dressing",
+    "imagepath": "Chocolate_crown.jpg",
+    "price": "$8.50",
+    "description": "Do not miss oh so yummy signature dish,crafted with love"
+  }
+  
+  ]

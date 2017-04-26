@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="javascripts/angular.js"></script>
+    <!--<script src="javascripts/angular.min.js"></script>-->
+    <script src="javascripts/angular-resource.min.js"></script>
+    <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/Menu_angular.js"></script>
+   
+    <title></title>
+</head>
+<body ng-app="Menu">
+    <div ng-controller="menuController">
+        
+        <div ng-repeat="items in FoodTypes">
+            <img ng-src="{{items.imagepath}}" height="150" width="200" />
+            <p>{{items.category}}</p>
+           
+            <p>{{items.text}}</p>
+            
+        </div>
+    </div>
+
+    <div ng-controller="drinksController">
+
+        <div ng-repeat="items in FoodTypes">
+            <img ng-src="{{items.imagepath}}" height="150" width="200" />
+            <p>{{items.name}}</p>
+            <p>{{items.description}}</p>
+            <p>{{itmes.price}}</p>
+
+
+        </div>
+    </div>
+    <div ng-controller="appetizerController">
+
+        <div ng-repeat="items in FoodTypes">
+            <img ng-src="{{items.imagepath}}" height="150" width="200" />
+            <p>{{items.name}}</p>
+            <p>{{items.description}}</p>
+            <p>{{itmes.price}}</p>
+
+
+        </div>
+    </div>
+    <div ng-controller="entreesController">
+
+        <div ng-repeat="items in FoodTypes">
+            <img ng-src="{{items.imagepath}}" height="150" width="200" />
+            <p>{{items.name}}</p>
+            <p>{{items.description}}</p>
+            <p>{{itmes.price}}</p>
+
+
+        </div>
+    </div>
+    <div ng-controller="dessertsController">
+
+        <div ng-repeat="items in FoodTypes">
+            <img ng-src="{{items.imagepath}}" height="150" width="200" />
+            <p>{{items.name}}</p>
+            <p>{{items.description}}</p>
+            <p>{{itmes.price}}</p>
+
+
+        </div>
+    </div>
+
+</body>
+</html>

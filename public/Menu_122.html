@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="javascripts/angular.js"></script>
+    <!--<script src="javascripts/angular.min.js"></script>-->
+    <script src="javascripts/angular-resource.min.js"></script>
+    <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/Menu_angular.js"></script>
+    <title>MENU</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/menu.css">
+</head>
+
+<body ng-app="Menu">
+    <div id="logo">
+        <div class="homepage_menu"><a href="Menu.html">Menu</a></div>
+        <div class="homepage_menu">Location</div>
+        <div class="homepage_menu">Career</div>
+        <div class="homepage_menu">
+            <input type="button" value="ORDER ONLINE">
+        </div>
+        <div class="homepage_menu">
+            <input type="button" value="RESERVATION">
+        </div>
+    </div>
+    <div id="menu" ng-controller="drinksController">
+        <div class="category">DRINKS</div>
+        <div class="line"></div>
+        
+        <div class="box">
+            <div class="item" ng-repeat="items in FoodTypes">
+                <div class="image" style="background-image:url('{{items.imagepath}}');"></div>
+                <div class="title">{{items.name}}</div>
+                <div class="discription">{{items.description}}</div>
+                <div class="price">{{items.price}}</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <!--<div class="item">
+                <div class="image" style="background-image:url('images/Mango_mai_tai.jpg');"></div>
+                <div class="title">Mango Mai Tai</div>
+                <div class="discription">Sailor Jerry rum, orange liqueur, mango, orgeat, fresh lime, Cruzan dark rum fl oat</div>
+                <div class="price">$10</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/diamond_eyes.jpg');"></div>
+                <div class="title">Diamond Eyes</div>
+                <div class="discription">Beefeater Gin, Clear Creek Pear Brandy, Velvet Falernum, Lime, Tiki Bitters</div>
+                <div class="price">$11</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/coffee.jpg');"></div>
+                <div class="title">Coffee</div>
+                <div class="discription">Aromatic medium,dark drip coffee</div>
+                <div class="price">$4.33</div>
+                <div class="dotted_line">........................................................</div>
+			</div>
+			<div class="item">
+                <div class="image" style="background-image:url('images/tea.jpg');"></div>
+                <div class="title">Tea</div>
+                <div class="discription">Aromatic tea</div>
+                <div class="price">$2.33</div>
+                <div class="dotted_line">........................................................</div>
+            </div>-->
+        </div>
+		
+        <div class="category">APPETIZER</div>
+        <div class="line"></div>
+        <div class="box">
+            <div class="item">
+                <div class="image" style="background-image:url('images/entrees.jpg');"></div>
+                <div class="title">RED LENTIL SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/Ginger_chili_tofu.jpg');"></div>
+                <div class="title">LEEK AND POTATOES SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/kung_chicken.jpg');"></div>
+                <div class="title">SPICY CORN SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/Garlic_pepper_chicken.jpg');"></div>
+                <div class="title">BEETROOT AND CREAM SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+        </div>
+        </div>
+		
+		<div class="category">ENTREES</div>
+        <div class="line"></div>
+        <div class="box">
+            <div class="item">
+                <div class="image" style="background-image:url('images/entrees.jpg');"></div>
+                <div class="title">RED LENTIL SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/Ginger_chili_tofu.jpg');"></div>
+                <div class="title">LEEK AND POTATOES SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/kung_chicken.jpg');"></div>
+                <div class="title">SPICY CORN SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/Garlic_pepper_chicken.jpg');"></div>
+                <div class="title">BEETROOT AND CREAM SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+        </div>
+        </div>
+		
+		<div class="category">DESSERTS</div>
+        <div class="line"></div>
+        <div class="box">
+            <div class="item">
+                <div class="image" style="background-image:url('images/entrees.jpg');"></div>
+                <div class="title">RED LENTIL SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/Ginger_chili_tofu.jpg');"></div>
+                <div class="title">LEEK AND POTATOES SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/kung_chicken.jpg');"></div>
+                <div class="title">SPICY CORN SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+            </div>
+            <div class="item">
+                <div class="image" style="background-image:url('images/Garlic_pepper_chicken.jpg');"></div>
+                <div class="title">BEETROOT AND CREAM SOUP</div>
+                <div class="discription">This is an item on your menu. Give your item a brief description</div>
+                <div class="price">$9</div>
+                <div class="dotted_line">........................................................</div>
+        </div>
+        </div>
+    </div>
+	
+    <div id="footer">
+        <div style="width:100%;height:250px">
+            <div id="footer_logo">Indichi</div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">CONTACT US</div>
+                <div class="footer_menu">Features</div>
+                <div class="footer_menu">Pricing</div>
+                <div class="footer_menu">Customers</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">ABOUT US</div>
+                <div class="footer_menu">Our Story</div>
+                <div class="footer_menu">Offices</div>
+                <div class="footer_menu">Press</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">FOLLOW US</div>
+                <div class="footer_menu">Facebook</div>
+                <div class="footer_menu">Twitter</div>
+                <div class="footer_menu">Instagram</div>
+            </div>
+        </div>
+        <div id="footer_copyright">Privacy   •    © 2017 Indichi Inc.</div>
+    </div>
+</body>
+</html>

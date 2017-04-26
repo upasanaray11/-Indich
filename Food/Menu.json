@@ -1,0 +1,27 @@
+﻿[
+  {
+    "category": "Drinks",
+    "imagepath": "drinks.jpg",
+    "id": "1",
+    "text": "From cocktails to punch for kids, find the perfect party drink."
+  },
+  {
+    "category": "Appetizer",
+    "imagepath": "appetizers.jpg",
+    "id": "2",
+    "text": "Fine dining appetizers will ensure you a good start."
+  },
+  {
+    "category": "Entrees",
+    "imagepath": "entrees.jpg",
+    "id": "3",
+    "text": "Knock your hunger out of the park with our wide selection of entree recipes."
+  },
+  {
+    "category": "Desserts",
+    "imagepath": "desserts.jpg",
+    "id": "4",
+    "text": "Treat your taste buds with sweet, savory, decadent desserts."
+  }
+
+]
