@@ -573,8 +573,10 @@
     <Compile Include="node_modules\yargs\lib\usage.js" />
     <Compile Include="node_modules\yargs\lib\validation.js" />
     <Compile Include="public\javascripts\Admin_Angular.js" />
+    <Compile Include="public\javascripts\angular-local-storage.js" />
     <Compile Include="public\javascripts\angular-resource.min.js" />
     <Compile Include="public\javascripts\angular-route.min.js" />
+    <Compile Include="public\javascripts\angular-ui-route.js" />
     <Compile Include="public\javascripts\angular.js" />
     <Compile Include="public\javascripts\angular.min.js" />
     <Compile Include="public\javascripts\Cart_Angular.js" />

@@ -7,7 +7,9 @@
     <!--<script src="javascripts/angular.min.js"></script>-->
     <script src="javascripts/angular-resource.min.js"></script>
     <script src="javascripts/angular-route.min.js"></script>
-    <script src="javascripts/Menu_angular.js"></script>
+    <script src="javascripts/angular-local-storage.js"></script>
+    <script src="javascripts/Cart_Angular.js"></script>
+    
     <title>MAIN MENU</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/mainmenu.css">
 </head>
@@ -22,12 +24,13 @@
             </div>
         </div>
 
-    <div class="box" ng-app="Menu" ng-controller="menuController">
-            <div class="item" ng-repeat="items in FoodTypes">
+    <div class="box" ng-app="orders" ng-controller="shoppingcart">
+            <div class="item" ng-repeat="items in menuFoodTypes">
                 <p class="category">{{items.category}}</p>
                 <a href="Menu_{{items.category}}.html"><img ng-src="{{items.imagepath}}" height="200" width="300" /></a>
-</div>
         </div>
+        </div>
+   <div ui-view="subMenu"></div>
 
     <div id="footer">
         <div style="width:100%;height:250px">

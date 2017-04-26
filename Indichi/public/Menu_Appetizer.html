@@ -7,37 +7,45 @@
     <!--<script src="javascripts/angular.min.js"></script>-->
     <script src="javascripts/angular-resource.min.js"></script>
     <script src="javascripts/angular-route.min.js"></script>
-    <script src="javascripts/Menu_angular.js"></script>
-    <title>APPETIZER</title>
+    <script src="javascripts/angular-local-storage.js"></script>
+    <script src="javascripts/Cart_Angular.js"></script>
+    
+    <title>DESSERTS</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/submenu.css">
+    <script src="javascripts/jquery-3.2.1.min.js"></script>
+    <script src="javascripts/submenu.js"></script>
 </head>
 
 <body>
-     <div id="logo">
-            <div class="homepage_menu"><a href="index.html">HOME</a></div>
-            <div class="homepage_menu"><a href="MainMenu.html">MENU</a></div>
-            <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</div>
-            <div class="homepage_menu">
-                <a href="login.html"><input class="button" type="button" value="ORDER ONLINE"></a></div>
+    <div id="logo">
+        <div class="homepage_menu"><a href="index.html">HOME</a></div>
+        <div class="homepage_menu"><a href="MainMenu.html">MENU</a></div>
+        <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</div>
+        <div class="homepage_menu">
+            <a href="login.html"><input class="button" type="button" value="ORDER ONLINE"></a>
+        </div>
     </div>
 
     <div id="menu">
         <div class="category">APPETIZER</div>
         <div class="line"></div>
-        <div class="box" ng-app="Menu" ng-controller="appetizerController">
-            <div class="item" ng-repeat="items in FoodTypes">
+        <div class="box" ng-app="orders" ng-controller="shoppingcart">
+            <div class="item" ng-repeat="items in appetizerFoodTypes">
                 <div class="image" style="background-image:url('{{items.imagepath}}');"></div>
                 <div class="title">{{items.name}}</div>
                 <div class="discription">{{items.description}}</div>
                 <div class="price">{{items.price}}</div>
                 <div class="dotted_line">........................................................</div>
+
                 <table>
                     <tr class="count">
                         <td><input class="textBox" value="{{items.quantity}}" /></td>
-                        <td><input class="select" type="button" value="ADD INTO CART" onclick="addToCart()" /></td>
+                        <td><input class="select" type="button" value="ADD INTO CART" ng-click="addToCart(items)" /></td>
                     </tr>
                 </table>
+
             </div>
+            <button ng-click="checkOut()">Checkout</button>
         </div>
     </div>
 

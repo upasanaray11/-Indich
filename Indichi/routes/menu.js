@@ -33,9 +33,6 @@ router.get('/', function (req, res) {
     //}
     //res.send(JSON.stringify(finalMenu));
 });
-
-
-
 router.get('/drinks', function (req, res) {
 
     var path = require("config");
@@ -125,10 +122,6 @@ router.post("/addNewItemToSubMenu", function (req, res) {
         imagepath: null
     };
     var response = addNewItemToSubMenu(newSubMenuItem, getListOfSubMenuItems);
-    if (response.popup == "Added the new user.Welcome!") {
-            var session = req.session;
-            session.loginAs = newUser.uname;
-          }
     res.send(response);
 });
 
@@ -137,11 +130,16 @@ router.post("/removeItemFromSubMenu", function (req, res) {
     var getListOfSubMenuItems = readSubMenuJson();
 
     var subMenuItemName = req.body.name;
-    var response = addNewItemToSubMenu(newSubMenuItem, getListOfSubMenuItems);
-    if (response.popup == "Added the new user.Welcome!") {
-            var session = req.session;
-            session.loginAs = newUser.uname;
-          }
+    var response = removeItemFromSubMenu(subMenuItemName, getListOfSubMenuItems);
+    res.send(response);
+});
+
+router.post("/changePriceOfMenuItem", function (req, res) {
+
+    var getListOfSubMenuItems = readSubMenuJson();
+    var subMenuItemNewPrice = req.body.price;
+    var subMenuItemName = req.body.name;
+    var response = changePriceOfMenuItem(subMenuItemName, subMenuItemNewPrice, getListOfSubMenuItems)
     res.send(response);
 });
 
@@ -167,7 +165,7 @@ function addNewItemToSubMenu(newSubMenuItem, getListOfSubMenuItems) {
     fs.writeFileSync(path.datapath + "\Submenu.json", JSON.stringify(getListOfSubMenuItems), 'utf8')
     response = {
         newSubMenuItem: newSubMenuItem,
-        popup: "Added the new user.Welcome!",
+        popup: "Added the item in Sub-menu!!",
         isSuccess: true
     }
     return response;
@@ -177,7 +175,7 @@ function removeItemFromSubMenu(subMenuItemName, getListOfSubMenuItems) {
     var response = {};
     for (var i = 0; i < getListOfSubMenuItems.length; i++) {
         if (subMenuItemName == getListOfSubMenuItems[i].name) {
-            getListOfSubMenuItems.splice(i);
+            getListOfSubMenuItems.splice(i,1);
             fs.writeFileSync(path.datapath + "\Submenu.json", JSON.stringify(getListOfSubMenuItems), 'utf8')
             response = {
                 subMenuItemName: subMenuItemName,
@@ -195,6 +193,27 @@ function removeItemFromSubMenu(subMenuItemName, getListOfSubMenuItems) {
         isSuccess: false
     }
     return response;
+}
+
+function changePriceOfMenuItem(subMenuItemName, subMenuItemNewPrice, getListOfSubMenuItems) {
+    var response = {};
+    for (var i = 0; i < getListOfSubMenuItems; i++) {
+        if (subMenuItemName == getListOfSubMenuItems[i].name) {
+            getListOfSubMenuItems[i].price = subMenuItemNewPrice;
+            fs.writeFileSync(path.datapath + "\Submenu.json", JSON.stringify(getListOfSubMenuItems), 'utf8')
+            response = {
+                subMenuItemName: subMenuItemName,
+                popup: "Price changed",
+                isSuccess: true
+            }
+            return response;
+        }
+    }
+    response = {
+        subMenuItemName: subMenuItemName,
+        popup: "Price not changed",
+        isSuccess: false
+    }
 }
 
 module.exports = router;
