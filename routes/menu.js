@@ -113,11 +113,88 @@ router.get('/desserts', function (req, res) {
     res.send(JSON.stringify(finalMenu));
 });
 
-function readSubMenuJson() {
+router.post("/addNewItemToSubMenu", function (req, res) {
     
+    var getListOfSubMenuItems = readSubMenuJson();
+
+    var newSubMenuItem = {
+        id: req.body.id,
+        name: req.body.name,
+        price: req.body.price,
+        description: req.body.description,
+        imagepath: null
+    };
+    var response = addNewItemToSubMenu(newSubMenuItem, getListOfSubMenuItems);
+    if (response.popup == "Added the new user.Welcome!") {
+            var session = req.session;
+            session.loginAs = newUser.uname;
+          }
+    res.send(response);
+});
+
+router.post("/removeItemFromSubMenu", function (req, res) {
+    
+    var getListOfSubMenuItems = readSubMenuJson();
+
+    var subMenuItemName = req.body.name;
+    var response = addNewItemToSubMenu(newSubMenuItem, getListOfSubMenuItems);
+    if (response.popup == "Added the new user.Welcome!") {
+            var session = req.session;
+            session.loginAs = newUser.uname;
+          }
+    res.send(response);
+});
+
+function readSubMenuJson() {
     var json = fs.readFileSync(path.datapath + "\Submenu.json", 'utf8').trim();
-    var listOfMenuItems = JSON.parse(json);
-    return listOfMenuItems;
+    var listOfSubMenuItems = JSON.parse(json);
+    return listOfSubMenuItems;
+}
+
+function addNewItemToSubMenu(newSubMenuItem, getListOfSubMenuItems) {
+    var response = {};
+    for (var i = 0; i < getListOfSubMenuItems.length; i++) {
+        if (newSubMenuItem.name == getListOfSubMenuItems[i].name) {
+            response = {
+                newSubMenuItem: newSubMenuItem,
+                popup: "SubMenuItem is already present",
+                isSuccess: false
+            }
+            return response;
+        }
+    }
+    getListOfSubMenuItems[getListOfSubMenuItems.length] = newSubMenuItem;
+    fs.writeFileSync(path.datapath + "\Submenu.json", JSON.stringify(getListOfSubMenuItems), 'utf8')
+    response = {
+        newSubMenuItem: newSubMenuItem,
+        popup: "Added the new user.Welcome!",
+        isSuccess: true
+    }
+    return response;
+}
+
+function removeItemFromSubMenu(subMenuItemName, getListOfSubMenuItems) {
+    var response = {};
+    for (var i = 0; i < getListOfSubMenuItems.length; i++) {
+        if (subMenuItemName == getListOfSubMenuItems[i].name) {
+            getListOfSubMenuItems.splice(i);
+            fs.writeFileSync(path.datapath + "\Submenu.json", JSON.stringify(getListOfSubMenuItems), 'utf8')
+            response = {
+                subMenuItemName: subMenuItemName,
+                popup: "SubMenuItem is present and deleted",
+                isSuccess: true
+            }
+            return response;
+        }
+    }
+    getListOfSubMenuItems[getlistUsers.length] = newSubMenuItem;
+    fs.writeFileSync(path.datapath + "\listUsers.json", JSON.stringify(getListOfSubMenuItems), 'utf8')
+    response = {
+        newSubMenuItem: newSubMenuItem,
+        popup: "SubMenuItem is not present and hence cannot be deleted",
+        isSuccess: false
+    }
+    return response;
 }
 
 module.exports = router;

@@ -43,6 +43,7 @@ function readUserJson() {
     var listOfUsers = JSON.parse(json);
     return listOfUsers;
 }
+
 function registerUser(newUser, getlistUsers) {
     var response = {};
     for (var i = 0; i < getlistUsers.length; i++) {
