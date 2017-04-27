@@ -3,27 +3,77 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
     <script src="javascripts/angular.js"></script>
-    <script src="javascripts/angular-route.min.js"></script>
+    <!--<script src="javascripts/angular.min.js"></script>-->
     <script src="javascripts/angular-resource.min.js"></script>
+    <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/angular-local-storage.js"></script>
     <script src="javascripts/Cart_Angular.js"></script>
+    <title>SIGN IN</title>
 </head>
-<body ng-app="orders">
-    <div ng-controller="shoppingcart">
-        <table>
-            <tr ng-repeat="hello in FoodTypes">
-                <td>{{hello.name}}</td>
-                <td><input type="text" ng-model="hello.quantity" /></td>
-                <td>{{hello.price}}</td>
-                
-                <td><input type="button" value="Add To Cart" ng-click="addToCart(hello)" /></td>
+<link rel="stylesheet" type="text/css" href="stylesheets/cart.css">
 
-                <button ng-click="checkOut()">CheckOut</button>
-                {{message}}
-            </tr>
-        </table>
+<body ng-app="orders">
+    <div id="logo">
+        <div class="homepage_menu"><a href="index.html">HOME</a></div>
+        <div class="homepage_menu"><a href="MainMenu.html">MENU</a></div>
+        <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</div>
+        <div class="homepage_menu">
+            <a href="javascript:void(0)"><input class="button" type="button" value="ORDER ONLINE"></a>
+        </div>
     </div>
 
+    <div id="middle">
+        <div class="box">
+            <form id="cartdisplay" ng-controller="shoppingcart" ng-submit="checkOut()">
+                <div class="title">Cart</div>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr ng-repeat="item in items">
+                            <td>{{item.name}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.price}}</td>
+                        </tr>
+
+                    </table>
+               
+                <br />
+                <div><input class="btnCheckOut" type="submit" value="Checkout"></div>
+                
+            </form>
+        </div>
+        </div>
+
+       
+
+    <div id="footer">
+        <div style="width:100%;height:250px">
+            <div id="footer_logo">Indichi</div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">CONTACT US</div>
+                <div class="footer_menu">Features</div>
+                <div class="footer_menu">Pricing</div>
+                <div class="footer_menu">Customers</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">ABOUT US</div>
+                <div class="footer_menu">Our Story</div>
+                <div class="footer_menu">Offices</div>
+                <div class="footer_menu">Press</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">FOLLOW US</div>
+                <div class="footer_menu">Facebook</div>
+                <div class="footer_menu">Twitter</div>
+                <div class="footer_menu">Instagram</div>
+            </div>
+        </div>
+        <div id="footer_copyright">Privacy   •    © 2017 Indichi Inc.</div>
+    </div>
+    </div>
 </body>
 </html>

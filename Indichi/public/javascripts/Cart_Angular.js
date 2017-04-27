@@ -39,7 +39,7 @@ app.controller("shoppingcart", function ($scope, $resource, $http, localStorageS
         
         var obj = {
             name: item.name,
-            description: item.description,
+            quantity: item.quantity,
             price: item.price
         }
         $scope.items.push(obj);
@@ -51,9 +51,11 @@ app.controller("shoppingcart", function ($scope, $resource, $http, localStorageS
             }
         }
         else {
-           items =  $scope.items;
+            items = $scope.items;
+            localStorageService.clearAll();
         }
-        localStorageService.set("cart",items);
+        localStorageService.set("cart", items);
+        
     }
 
     $scope.checkOut = function () {

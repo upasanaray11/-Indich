@@ -8,7 +8,8 @@ router.get('/', function (req, res) {
     var getlistUsers = readUserJson();
     res.send(getlistUsers);
 });
-    
+
+
 
 function readUserJson() {
     

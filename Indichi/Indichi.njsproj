@@ -1116,6 +1116,7 @@
     <Content Include="public\Order.html" />
     <Content Include="public\stylesheets\AboutUS.css" />
     <Content Include="public\stylesheets\admin.css" />
+    <Content Include="public\stylesheets\cart.css" />
     <Content Include="public\stylesheets\Home.css" />
     <Content Include="public\stylesheets\login.css" />
     <Content Include="public\stylesheets\Main.css" />

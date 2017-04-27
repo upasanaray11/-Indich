@@ -3,50 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
-    <link href="stylesheets/admin.css" rel="stylesheet" />
     <script src="javascripts/angular.js"></script>
     <!--<script src="javascripts/angular.min.js"></script>-->
     <script src="javascripts/angular-resource.min.js"></script>
     <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/angular-local-storage.js"></script>
     <script src="javascripts/Admin_Angular.js"></script>
+    <title>SIGN IN</title>
 </head>
+<link rel="stylesheet" type="text/css" href="stylesheets/cart.css">
 
-<body>
-
-    <div class="container" ng-app="Admin">
-        <div class="dropdown" ng-controller="adminController">
-            <!--<button class="dropbtn" onclick="myFunction()">Delete menu item</button>
-            <button class="dropbtn" onclick="myFunction()">Change the price</button>
-            <button class="dropbtn" onclick="myFunction()">Add new menu item</button>-->
-            <button class="dropbtn" onclick="myFunction()">Delete the user</button>
-            <div class="dropdown-content" id="myDropdown" ng-repeat="users in GetlistUsers">
-                
-                    <li>{{users}}</li>
-                </div>
-            </div>
+<body ng-app="Admin">
+    <div id="logo">
+        <div class="homepage_menu"><a href="index.html">HOME</a></div>
+        <div class="homepage_menu"><a href="MainMenu.html">MENU</a></div>
+        <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</div>
+        <div class="homepage_menu">
+            <a href="javascript:void(0)"><input class="button" type="button" value="ORDER ONLINE"></a>
+        </div>
     </div>
 
-    <h3>Dropdown Menu inside a Navigation Bar</h3>
-    <p>Click on the "Dropdown" link to see the dropdown menu.</p>
+    
 
-    <script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-    var myDropdown = document.getElementById("myDropdown");
-      if (myDropdown.classList.contains('show')) {
-        myDropdown.classList.remove('show');
-      }
-  }
-}
-    </script>
-
+    <div id="footer">
+        <div style="width:100%;height:250px">
+            <div id="footer_logo">Indichi</div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">CONTACT US</div>
+                <div class="footer_menu">Features</div>
+                <div class="footer_menu">Pricing</div>
+                <div class="footer_menu">Customers</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">ABOUT US</div>
+                <div class="footer_menu">Our Story</div>
+                <div class="footer_menu">Offices</div>
+                <div class="footer_menu">Press</div>
+            </div>
+            <div style="width:200px;height:100px;float:left;margin-top:30px;">
+                <div class="footer_contact">FOLLOW US</div>
+                <div class="footer_menu">Facebook</div>
+                <div class="footer_menu">Twitter</div>
+                <div class="footer_menu">Instagram</div>
+            </div>
+        </div>
+        <div id="footer_copyright">Privacy   •    © 2017 Indichi Inc.</div>
+    </div>
+    </div>
 </body>
 </html>
