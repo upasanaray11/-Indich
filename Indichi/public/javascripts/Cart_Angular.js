@@ -1,4 +1,4 @@
-﻿var app = angular.module("orders", ["ngResource", "LocalStorageModule"]);
+﻿var app = angular.module("orders", ["ngResource","LocalStorageModule"]);
 app.controller("shoppingcart", function ($scope, $resource, $http, localStorageService) {
     $scope.items = [];
     var items = [];
@@ -36,7 +36,7 @@ app.controller("shoppingcart", function ($scope, $resource, $http, localStorageS
     });
 
     $scope.addToCart = function (item) {
-
+        
         var obj = {
             name: item.name,
             quantity: item.quantity,
@@ -45,17 +45,18 @@ app.controller("shoppingcart", function ($scope, $resource, $http, localStorageS
         $scope.items.push(obj);
         if (localStorageService.get("cart")) {
             items = localStorageService.get("cart");
-            localStorageService.clearAll();
-            for (var i = 0; i < $scope.items.length; i++) {
-                items.push($scope.items[i]);
-            }
+            items.push(obj);
+            //localStorageService.clearAll();
+            //for (var i = 0; i < $scope.items.length; i++) {
+            //    items.push($scope.items[i]);
+            //}
         }
         else {
             items = $scope.items;
             localStorageService.clearAll();
         }
         localStorageService.set("cart", items);
-
+        
     }
 
     $scope.checkOut = function () {
@@ -67,7 +68,7 @@ app.controller("shoppingcart", function ($scope, $resource, $http, localStorageS
             if (response.popup) { $scope.message = response.popup }
 
         });
-
-    }
+       
+    }   
 
 })
