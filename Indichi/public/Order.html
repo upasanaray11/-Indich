@@ -17,9 +17,10 @@
     <div id="logo">
         <div class="homepage_menu"><a href="index.html">HOME</a></div>
         <div class="homepage_menu"><a href="MainMenu.html">MENU</a></div>
-        <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</div>
+        <div class="homepage_menu"><a href="javascript:void(0)">Cart</a></div>
+        <div class="homepage_menu"><a href="AboutUS.html">ABOUT US</a></div>
         <div class="homepage_menu">
-            <a href="javascript:void(0)"><input class="button" type="button" value="ORDER ONLINE"></a>
+            <a href="login.html"><input class="button" type="button" value="ORDER ONLINE"></a>
         </div>
     </div>
 
@@ -30,13 +31,13 @@
                     <table>
                         <tr>
                             <th>Name</th>
-                            <th>Quantity</th>
                             <th>Price</th>
+									  
                         </tr>
                         <tr ng-repeat="item in items">
                             <td>{{item.name}}</td>
-                            <td>{{item.quantity}}</td>
                             <td>{{item.price}}</td>
+											   
                         </tr>
 
                     </table>
@@ -47,6 +48,7 @@
             </form>
         </div>
         </div>
+		  
 
        
 

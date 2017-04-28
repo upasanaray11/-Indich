@@ -1,4 +1,5 @@
-﻿p{
+﻿
+p{
     text-align: center;
    font-family:PT Sans;
    margin-bottom: 20px;
@@ -14,32 +15,33 @@ h2{
 }
 
 
-#dropdown {
-    margin:0px;
-    padding:0px;
-    float:left;
-    position:absolute;
-    top:17px;
-    left:-35px;
-    border:1px solid #000000;
-    display:none;
-}
+		   
+			   
+				
+			   
+					  
+			 
+			   
+							 
+				 
+ 
 
-#dropdown .dropdownitem {
-    padding-left:35px;
-    width:100px;
-    height:30px;
-    font-size:13px;
-    font-weight:normal;
-    color:#000000;
-    text-align:left;
-    line-height:30px;
-    list-style-type:none;
-    border:1px solid #000000;
-    background-color:#FFFCFD;
-}
+						 
+					  
+				
+				
+				   
+					   
+				  
+					
+					 
+						 
+							 
+							 
+ 
 
 #logo{
+    margin:auto;
     width:900px;
     height:200px;
     background-image:url("../images/logo.png");
@@ -50,7 +52,7 @@ h2{
 }
 
 .homepage_menu{
-    width:200px;
+    width:160px;
     height:200px;
     font-family:fantasy;
     font-size:16px;
@@ -84,17 +86,17 @@ h2{
     background-image:url("../images/menu.jpg");
     background-repeat:no-repeat;
     background-size:1200px 500px;
-    margin:0;
+    margin:auto;
 }
 
-#poster{
-    width:1200px;
-    height:500px;
-    background-image:url("../images/menu.jpg");
-    background-repeat:no-repeat;
-    background-size:1200px 500px;
-    margin:0;
-}
+		
+				 
+				 
+											   
+								
+								 
+			 
+ 
 
 #textBox{
     width:1200px;
@@ -124,6 +126,7 @@ h2{
 }
 
 #footer{
+    margin:auto;
     width:1200px;
     height:300px;
     background-color:#353740;
