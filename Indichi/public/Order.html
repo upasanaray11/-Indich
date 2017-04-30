@@ -31,19 +31,22 @@
                     <table>
                         <tr>
                             <th>Name</th>
+                            <th>Quantity</th>
                             <th>Price</th>
 									  
                         </tr>
-                        <tr ng-repeat="item in items">
+                        <tr ng-repeat="item in items2">
                             <td>{{item.name}}</td>
+                            <td>{{item.quantity}}</td>
                             <td>{{item.price}}</td>
-											   
                         </tr>
-
+                        <tr>
+                            <td> Total = {{total}}</td>
+                        </tr>
                     </table>
                
                 <br />
-                <div><input class="btnCheckOut" type="submit" value="Checkout"></div>
+                <div><input class="btnCheckOut" type="submit" value="Checkout" ng-disabled="checkoutDisabled"></div>
                 
             </form>
         </div>

@@ -1,10 +1,21 @@
 ﻿var app = angular.module("orders", ["ngResource","LocalStorageModule"]);
 app.controller("shoppingcart", function ($scope, $resource, $http, localStorageService) {
     $scope.items = [];
+    $scope.itemQuantity = 0;
     var items = [];
-
+    var total = 0;
+    $scope.checkoutDisabled = false;
+    $scope.items2 = localStorageService.get("cart");
+    if($scope.items2 != null) {
+        for (var i = 0; i < $scope.items2.length; i++) {
+        var priceString = $scope.items2[i].price.substring(1);
+        total += parseFloat(priceString) * parseInt($scope.items2[i].quantity);
+    }
+    }
+    $scope.total = total;
     console.log(localStorageService.get("cart"));
     console.log($scope.items);
+    console.log($scope.total);
 
     var r = $resource("/menu");
 
@@ -36,7 +47,8 @@ app.controller("shoppingcart", function ($scope, $resource, $http, localStorageS
     });
 
     $scope.addToCart = function (item) {
-        
+        console.log("Quantity: " + item.quantity);
+        $scope.checkoutDisabled = false;
         var obj = {
             name: item.name,
             quantity: item.quantity,
@@ -66,7 +78,9 @@ app.controller("shoppingcart", function ($scope, $resource, $http, localStorageS
         response = { popup: "Sent to server." }
         $http.post("/orders/newOrder", obj).then(function (response) {
             if (response.popup) { $scope.message = response.popup }
-
+            alert("Order Submitted successfully");
+            $scope.items = [];
+            $scope.checkoutDisabled = true;
         });
        
     }   

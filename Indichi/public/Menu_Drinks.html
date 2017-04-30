@@ -36,8 +36,8 @@
                 <div class="dotted_line">........................................................</div>
                 <table>
                     <tr class="count">
-                        <td><input class="textBox" value="{{items.quantity}}" /></td>
-                        <td><input class="select" type="button" value="ADD INTO CART" ng-click="addToCart(items)" /></td>
+                        <td><input class="textBox" ng-model="items.quantity" /></td>
+                        <td><input class="select" type="button" value="ADD INTO CART" ng-click="addToCart(items, itemQuantity)" /></td>
                     </tr>
                 </table>
             </div>
